@@ -13,8 +13,11 @@ const sendMessage = async (query)=>{
 
 setMessages([...messages,{type:"user",text:query}])
 
+// const res = await axios.get(
+// `http://127.0.0.1:8000/test_prompt?query=${query}`
+// )
 const res = await axios.get(
-`http://127.0.0.1:8000/test_prompt?query=${query}`
+`https://promptbench-ai.onrender.com/test_prompt?query=${query}`
 )
 
 setAnalysis(res.data)
